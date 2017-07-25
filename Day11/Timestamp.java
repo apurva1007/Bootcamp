@@ -1,7 +1,7 @@
 import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.SOURCE)
-@Target({ElementType.TYPE,ElementType.METHOD})
+@Target({ElementType.LOCAL_VARIABLE,ElementType.METHOD})
 @interface Timestamp {
 	Day day();
 	Month month();
