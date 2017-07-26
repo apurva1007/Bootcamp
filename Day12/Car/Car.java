@@ -50,9 +50,9 @@ public class Car implements Comparable<Car> {
         if (this.getPrice() == o.getPrice())
             return 0;
         else if(this.getPrice() > o.getPrice())
-            return 1;
-        else
             return -1;
+        else
+            return 1;
     }
     @Override
     public boolean equals(Object obj) {
