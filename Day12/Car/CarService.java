@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -14,21 +15,21 @@ public class CarService {
         createTestData(carSet);
         System.out.println("Natural Ordering by price: ");
         printData(carSet);
-        System.out.println();
 
-/*
-        Set<Car> carSet = new TreeSet<>(idComparator);                       //compare by id
-        createTestData(carSet);
+        Car[] list = new Car[carSet.size()];
+        carSet.toArray(list);
+
+        Arrays.sort(list, idComparator);                                     //compare by id
         System.out.println("Ordering by id: ");
-        printData(carSet);
-        System.out.println();
+        for (Car car : list) {
+            System.out.println(car.toString());
+        }
 
-        Set<Car> carSet = new TreeSet<>(brandComparator);                    //compare by brand
-        createTestData(carSet);
+        Arrays.sort(list, brandComparator);                                 //compare by brand
         System.out.println("Ordering by brand: ");
-        printData(carSet);
-        System.out.println();
-*/
+        for (Car car : list) {
+            System.out.println(car.toString());
+        }
     }
 
     private static void printData(Set<Car> carSet) {
@@ -40,29 +41,29 @@ public class CarService {
     }
 
     private static void createTestData(Set<Car> carSet) {
-        carSet.add(new Car(1,88409.789, "DFTV"));
-        carSet.add(new Car(2,88409.789, "DETV"));
-        carSet.add(new Car(3,409.89, "DERFTV"));
-        carSet.add(new Car(4,889.78, "DERV"));
-        carSet.add(new Car(5,8849.79, "DETV"));
-        carSet.add(new Car(5,8849.79, "DETV"));
-        carSet.add(new Car(6,88436.789, "DFTV"));
-        carSet.add(new Car(7,88409.789, "DETV"));
-        carSet.add(new Car(9,409.89, "DERFTV"));
-        carSet.add(new Car(9,889.78, "DERV"));
-        carSet.add(new Car(10,8849.79, "DETV"));
-        carSet.add(new Car(10,8849.79, "DETV"));
-        carSet.add(new Car(11,88409.789, "DFTV"));
-        carSet.add(new Car(12,88409.789, "DETV"));
-        carSet.add(new Car(13,409.89, "DERFTV"));
-        carSet.add(new Car(14,87489.78, "DERV"));
-        carSet.add(new Car(14,8849.79, "DETV"));
-        carSet.add(new Car(16,8849.79, "DETV"));
-        carSet.add(new Car(17,98409.789, "DFTV"));
-        carSet.add(new Car(17,34409.789, "DETV"));
-        carSet.add(new Car(18,29.89, "DERFTV"));
-        carSet.add(new Car(18,81239.78, "DERV"));
-        carSet.add(new Car(20,176389.79, "DETV"));
-        carSet.add(new Car(20,884739.79, "DETV"));
+        carSet.add(new Car(1,88409.789, "BMW"));
+        carSet.add(new Car(2,88409.789, "Mahindra"));
+        carSet.add(new Car(3,409.89, "Honda"));
+        carSet.add(new Car(4,889.78, "Tata"));
+        carSet.add(new Car(5,8849.79, "Audi"));
+        carSet.add(new Car(5,8849.79, "BMW"));
+        carSet.add(new Car(6,88436.789, "Mahindra"));
+        carSet.add(new Car(7,88409.789, "Tata"));
+        carSet.add(new Car(9,409.89, "BMW"));
+        carSet.add(new Car(9,889.78, "Mahindra"));
+        carSet.add(new Car(10,8849.79, "BMW"));
+        carSet.add(new Car(10,8849.79, "Honda"));
+        carSet.add(new Car(11,88409.789, "Honda"));
+        carSet.add(new Car(12,88409.789, "Mahindra"));
+        carSet.add(new Car(13,409.89, "BMW"));
+        carSet.add(new Car(14,87489.78, "Mahindra"));
+        carSet.add(new Car(14,8849.79, "BMW"));
+        carSet.add(new Car(16,8849.79, "Mahindra"));
+        carSet.add(new Car(17,98409.789, "Tata"));
+        carSet.add(new Car(17,34409.789, "Audi"));
+        carSet.add(new Car(18,29.89, "Honda"));
+        carSet.add(new Car(18,81239.78, "Honda"));
+        carSet.add(new Car(20,176389.79, "Audi"));
+        carSet.add(new Car(20,884739.79, "Honda"));
     }
 }

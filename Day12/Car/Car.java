@@ -57,11 +57,11 @@ public class Car implements Comparable<Car> {
     @Override
     public boolean equals(Object obj) {
         Car car = (Car) obj;
-        return (this.getPrice() == car.getPrice() && this.getBrand().equals(car.getBrand()) && this.getId() == car.getId());
+        return ((this.getPrice() == car.getPrice()) && (this.getBrand().equals(car.getBrand())) && (this.getId() == car.getId()));
     }
 
     @Override
     public int hashCode() {
-        return this.getId();
+        return (int) (this.getBrand().hashCode() + this.getId() + this.getPrice());
     }
 }
