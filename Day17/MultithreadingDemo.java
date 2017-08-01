@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 /**
  * Created by ruplaga on 7/31/2017.
  */
@@ -5,12 +7,14 @@ public class MultithreadingDemo {
 
     static int value = 0;
 
-    public static void main(String[] args) {
+    @Test
+    public void checkValue() {
 
         for (int i = 0; i < 10; i++) {
             ValueTask valueTask = new ValueTask();
             Worker1 worker1 = new Worker1(valueTask);
             worker1.start();
+
 
             PrintTask printTask = new PrintTask();
             Worker2 worker2 = new Worker2(printTask);
