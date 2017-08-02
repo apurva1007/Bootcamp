@@ -32,8 +32,9 @@ class PrimeNumberGenerator implements Callable<Integer>{
     }
     public Integer call(){
         int sum = 0;
-        for(int i = start +1; i<= end; i++) {
+        for(int i = start; i<= end; i++) {
             if (isPrime(i)) {
+                //System.out.print(i + " ");
                 sum = sum + i;
             }
         }
