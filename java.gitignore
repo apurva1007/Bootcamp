@@ -5,7 +5,7 @@ logs/
 out/
 bin/
 target/
-lib/
+*/lib/
 
 # Java
 *.class
